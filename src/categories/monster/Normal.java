@@ -7,6 +7,6 @@ public class Normal extends MonsterCategory {
         super.attack = 5;
         super.speed = 5;
         super.defense = 5;
-        super.dodgeOdd = 0.1;
+        super.dodgeChance = 0.1;
     }
 }

@@ -16,11 +16,11 @@ public class PJ extends Character{
         calculateLevel();
     }
 
-    public void changeCategory(HeroCategory category) {
+    void changeCategory(HeroCategory category) {
         this.category = category;
     }
 
-    public void addExp(double experience) {
+    void addExp(double experience) {
         this.experience += experience;
         calculateLevel();
     }

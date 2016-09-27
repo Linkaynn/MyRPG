@@ -6,7 +6,7 @@ import character.PJ;
 
 import java.util.Random;
 
-public class Combat {
+class Combat {
     private final PJ hero;
     private final Monster monster;
 
@@ -14,7 +14,7 @@ public class Combat {
     private Character defender;
     private boolean dodged = false;
 
-    public Combat(PJ hero, Monster monster) {
+    Combat(PJ hero, Monster monster) {
         this.hero = hero;
         this.monster = monster;
     }
@@ -27,7 +27,7 @@ public class Combat {
         return monster;
     }
 
-    public Character whoIsNext() {
+    Character whoIsNext() {
 
         Character fasterCharacter = hero.speed() - monster.speed() <= 0 ? monster : hero;
         Character slowerCharacter = fasterCharacter instanceof PJ ? monster : hero;
@@ -46,7 +46,7 @@ public class Combat {
         return character;
     }
 
-    public double fight() {
+    double fight() {
         this.attacker = whoIsNext();
         this.defender = whoIsTheOther(attacker);
 
@@ -61,15 +61,15 @@ public class Combat {
         return character instanceof PJ ? monster : hero;
     }
 
-    public Character attacker() {
+    Character attacker() {
         return attacker;
     }
 
-    public Character defender() {
+    Character defender() {
         return defender;
     }
 
-    public boolean dodged() {
+    boolean dodged() {
         return dodged;
     }
 }

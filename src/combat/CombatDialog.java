@@ -2,18 +2,18 @@ package combat;
 
 import java.util.Date;
 
-public class CombatDialog {
+class CombatDialog {
     private final CombatController controller;
 
-    public CombatDialog(CombatController controller) {
+    CombatDialog(CombatController controller) {
         this.controller = controller;
     }
 
-    public void startBattle() {
+    void startBattle() {
         System.out.println(String.format("%s\n%s vs %s", new Date(), controller.combat().hero().name(), controller.combat().monster().name()));
     }
 
-    public void update(double damage) {
+    void update() {
         Combat combat = controller.combat();
         try {
             if (!combat.dodged()) {
@@ -28,7 +28,7 @@ public class CombatDialog {
         }
     }
 
-    public void endBattle() {
+    void endBattle() {
         System.out.println(String.format("Battle ended!\nThe winner is %s\nThe looser is %s", controller.winner(), controller.looser()));
     }
 

@@ -2,7 +2,7 @@ package combat;
 
 import character.Character;
 
-public class CombatController {
+class CombatController {
     private final Combat combat;
 
     private final CombatDialog dialog;
@@ -10,18 +10,18 @@ public class CombatController {
     private Character winner;
     private Character looser;
 
-    public CombatController(Combat combat) {
+    CombatController(Combat combat) {
         this.combat = combat;
         dialog = new CombatDialog(this);
     }
 
-    public void start() {
+    void start() {
         boolean hasEnded = false;
         try {
             dialog.startBattle();
             while (!hasEnded){
                 Thread.sleep(200);
-                dialog.update(combat.fight());
+                dialog.update();
                 hasEnded = combat.defender().life() <= 0;
             }
             winner = combat.attacker();
@@ -33,15 +33,15 @@ public class CombatController {
 
     }
 
-    public Combat combat() {
+    Combat combat() {
         return combat;
     }
 
-    public Character looser() {
+    Character looser() {
         return looser;
     }
 
-    public Character winner() {
+    Character winner() {
         return winner;
     }
 }

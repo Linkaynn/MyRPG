@@ -8,6 +8,6 @@ public class Warrior extends HeroCategory {
         super.attack = 10;
         super.speed = 3.5;
         super.defense = 8;
-        super.dodgeOdd = 0.1;
+        super.dodgeChance = 0.1;
     }
 }

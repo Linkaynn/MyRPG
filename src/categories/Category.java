@@ -6,7 +6,7 @@ public abstract class Category {
     protected double speed;
     protected double defense;
 
-    protected double dodgeOdd;
+    protected double dodgeChance;
 
     protected String name;
 
@@ -32,6 +32,6 @@ public abstract class Category {
     }
 
     public double baseDodge(){
-        return dodgeOdd;
+        return dodgeChance;
     }
 }

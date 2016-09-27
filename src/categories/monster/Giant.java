@@ -7,7 +7,7 @@ public class Giant extends MonsterCategory {
         super.attack = 9;
         super.speed = 1.2;
         super.defense = 7.8;
-        super.dodgeOdd = 0.01;
+        super.dodgeChance = 0.01;
 
     }
 }

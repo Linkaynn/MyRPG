@@ -8,6 +8,6 @@ public class Paladin extends HeroCategory {
         super.attack = 7.2;
         super.speed = 4;
         super.defense = 11;
-        super.dodgeOdd = 0.15;
+        super.dodgeChance = 0.15;
     }
 }

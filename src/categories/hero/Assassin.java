@@ -8,6 +8,6 @@ public class Assassin extends HeroCategory {
         super.attack = 8;
         super.speed = 9.5;
         super.defense = 3.35;
-        super.dodgeOdd = 0.25;
+        super.dodgeChance = 0.25;
     }
 }

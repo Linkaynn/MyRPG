@@ -8,6 +8,6 @@ public class Assassin extends MonsterCategory {
         super.attack = 9;
         super.speed = 12;
         super.defense = 2.5;
-        super.dodgeOdd = 0.15;
+        super.dodgeChance = 0.15;
     }
 }
