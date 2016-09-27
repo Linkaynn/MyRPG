@@ -1,5 +1,5 @@
 # MyRPG
-Started in a airplane, this is my boring embodied on code.
+Started in a airplane, this is my boredom embodied on code.
 
 ## Features
 Now are implemented:
