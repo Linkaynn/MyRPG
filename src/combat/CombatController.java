@@ -21,6 +21,7 @@ class CombatController {
             dialog.startBattle();
             while (!hasEnded){
                 Thread.sleep(200);
+                combat.fight();
                 dialog.update();
                 hasEnded = combat.defender().life() <= 0;
             }

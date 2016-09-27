@@ -2,7 +2,7 @@ package combat;
 
 import java.util.Date;
 
-class CombatDialog {
+public class CombatDialog {
     private final CombatController controller;
 
     CombatDialog(CombatController controller) {
@@ -20,15 +20,15 @@ class CombatDialog {
                 System.out.println(String.format("%s\t\t\t\t%s\n%s/%s\t\t\t\t%s/%s\n\n\n\n", combat.attacker(), combat.defender(), format(combat.attacker().life()), format(combat.attacker().maxLife()), format(combat.defender().life()), format(combat.defender().maxLife())));
             }else {
                 System.out.println(String.format("\n%s dodged %s attack!!", combat.defender(), combat.attacker()));
-                Thread.sleep(300);
+                Thread.sleep(1000);
             }
-            Thread.sleep(2000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
-    void endBattle() {
+    public void endBattle() {
         System.out.println(String.format("Battle ended!\nThe winner is %s\nThe looser is %s", controller.winner(), controller.looser()));
     }
 
