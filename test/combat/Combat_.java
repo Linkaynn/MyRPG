@@ -12,7 +12,7 @@ import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.hamcrest.core.IsNull.nullValue;
 
-public class _Combat {
+public class Combat_ {
 
     private Combat combat;
 

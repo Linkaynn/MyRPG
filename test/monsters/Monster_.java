@@ -7,7 +7,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import static org.hamcrest.core.Is.is;
 
-public class _Monster {
+public class Monster_ {
     @Test
     public void should_generate_a_random_monster() throws Exception {
         Monster monster = new Monster(50);
