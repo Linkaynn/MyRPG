@@ -5,9 +5,13 @@ import categories.hero.CategoryTester;
 import categories.hero.Paladin;
 import org.junit.Before;
 import org.junit.Test;
+import race.Human;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.Matchers.isA;
+import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.number.IsCloseTo.closeTo;
 import static org.junit.Assert.assertThat;
@@ -32,7 +36,7 @@ public class Hero_ {
 
     @Test
     public void must_be_human() throws Exception {
-        assertThat(hero.race(), is("Human"));
+        assertThat(hero.race(), is(instanceOf(Human.class)));
     }
 
     @Test
@@ -67,16 +71,13 @@ public class Hero_ {
     @Test
     public void should_take_damage() throws Exception {
         hero.takeDamage(15.0);
-        assertThat(hero.life(), is(56.0));
+        assertThat(hero.life(), lessThan(hero.maxLife()));
     }
 
     @Test
     public void armor_should_decay_after_take_damage() throws Exception {
+        double maxDefense = hero.defense();
         hero.takeDamage(15.0);
-        assertThat(hero.life(), is(56.0));
-        assertThat(hero.defense(), is(10.45));
-        hero.takeDamage(15.0);
-        assertThat(hero.life(), is(51.45));
-        assertThat(hero.defense(), closeTo(9.89, 0.01));
+        assertThat(hero.defense(), lessThan(maxDefense));
     }
 }

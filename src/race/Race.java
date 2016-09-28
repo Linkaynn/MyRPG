@@ -32,4 +32,9 @@ abstract public class Race {
     public double dodgeBonus() {
         return dodgeBonus;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

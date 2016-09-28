@@ -1,11 +1,14 @@
 package combat;
 
 import character.Character;
+import util.Util;
 
 class CombatController {
     private final Combat combat;
 
     private final CombatDialog dialog;
+
+    private boolean fastCombat = false;
 
     private Character winner;
     private Character looser;
@@ -15,23 +18,25 @@ class CombatController {
         dialog = new CombatDialog(this);
     }
 
+    public CombatController(Combat combat, boolean fastCombat) {
+        this(combat);
+        this.fastCombat = fastCombat;
+    }
+
     void start() {
         boolean hasEnded = false;
-        try {
-            dialog.startBattle();
-            while (!hasEnded){
-                Thread.sleep(200);
-                combat.fight();
+        dialog.startBattle();
+        while (!hasEnded){
+            combat.fight();
+            if (!fastCombat) {
                 dialog.update();
-                hasEnded = combat.defender().life() <= 0;
+                Util.sleep(200);
             }
-            winner = combat.attacker();
-            looser = combat.defender();
-            dialog.endBattle();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            hasEnded = combat.defender().life() <= 0;
         }
-
+        winner = combat.attacker();
+        looser = combat.defender();
+        dialog.endBattle();
     }
 
     Combat combat() {

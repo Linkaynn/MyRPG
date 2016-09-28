@@ -40,7 +40,7 @@ public class Combat_ {
 
     @Test
     public void should_have_a_winner() throws Exception {
-        CombatController combatController = new CombatController(combat);
+        CombatController combatController = new CombatController(combat, true);
         combatController.start();
         assertThat(combatController.looser(), is(not(nullValue())));
         assertThat(combatController.winner(), is(not(nullValue())));

@@ -58,8 +58,8 @@ abstract public class Character {
 
     public abstract String stats();
 
-    public String race() {
-        return race.name();
+    public Race race(){
+        return race;
     }
 
     public void takeDamage(double damage) {
