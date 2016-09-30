@@ -1,6 +1,7 @@
 package character;
 
 import categories.Category;
+import equipment.armours.Armour;
 import race.Race;
 
 abstract public class Character {
@@ -8,12 +9,14 @@ abstract public class Character {
     protected Category category;
     protected Race race;
 
+    protected Armour armour;
+
     protected double maxLife = 0;
 
     protected int level = 1;
 
     private double damage = 0;
-    private double armorIntegrity = 1;
+    private double defenseIntegrity = 1;
     private double speedFactor = 1;
 
     public String name() {
@@ -37,7 +40,7 @@ abstract public class Character {
     }
 
     public double defense(){
-        return level * category.baseDefense() * race.defenseBonus() * armorIntegrity;
+        return level * category.baseDefense() * race.defenseBonus() * defenseIntegrity + (armour == null ? 0 : armour.protection());
     }
 
     public double speed(){
@@ -62,9 +65,13 @@ abstract public class Character {
         return race;
     }
 
+    public Armour armour() {
+        return armour;
+    }
+
     public void takeDamage(double damage) {
         this.damage += defense() < damage ? damage - defense() : 0;
-        armorIntegrity -= 0.05;
+        defenseIntegrity -= 0.05;
     }
 
     public void speedDown() {
@@ -76,4 +83,5 @@ abstract public class Character {
         speedFactor += 0.1;
         if (speedFactor > 1) speedFactor = 1;
     }
+
 }

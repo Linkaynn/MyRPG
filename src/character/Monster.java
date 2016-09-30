@@ -1,6 +1,7 @@
 package character;
 
 import categories.monster.MonsterCategory;
+import equipment.armours.Armour;
 import generators.MonsterGenerator;
 import race.Race;
 

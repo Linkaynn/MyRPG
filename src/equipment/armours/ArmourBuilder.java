@@ -1,8 +1,6 @@
 package equipment.armours;
 
-import categories.hero.Assassin;
 import categories.hero.HeroCategory;
-import categories.hero.Paladin;
 
 import java.util.ArrayList;
 import java.util.Collections;

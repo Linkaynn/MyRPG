@@ -1,11 +1,8 @@
 package equipment.armours;
 
 import categories.hero.HeroCategory;
-import sun.reflect.misc.ConstructorUtil;
-import sun.reflect.misc.ReflectUtil;
 
 import java.util.ArrayList;
-import java.util.function.Predicate;
 
 public class Armour {
     private final int levelRequirement;

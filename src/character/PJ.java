@@ -2,6 +2,7 @@ package character;
 
 
 import categories.hero.HeroCategory;
+import equipment.armours.Armour;
 import race.Human;
 
 public class PJ extends Character{
@@ -49,5 +50,14 @@ public class PJ extends Character{
                              "Life: %s\nAttack: %s\nDefense: %s\nSpeed: %s\nDodge Odd: %s\n" +
                              "-----------------\n\n"
                 ,name, category.name(), level, experience, nextLevelExperience(),life(), attack(), defense(), speed(), dodge());
+    }
+
+    public boolean equip(Armour armour) {
+        this.armour = armour.allowTo(((HeroCategory) category).getClass()) ? armour : this.armour;
+        return this.armour == armour;
+    }
+
+    public void removeArmour() {
+        this.armour = null;
     }
 }
